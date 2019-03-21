@@ -12,7 +12,7 @@ p,div,span,li,td{
 	font-size: 14px;
 }
 .H_ib_body {
-	padding: 10px !important;
+	padding: 0px !important;
 	box-shadow: 0 14px 25px rgba(0,0,0, .25)
 }
 .H_ib_body,
@@ -32,6 +32,9 @@ svg.H_icon {
 h1 {
 	text-align: center
 }
+.unit-info {
+	padding:10px;
+}
 .model {
 	padding-top: 10px;
 	font-size: 18px;
@@ -44,4 +47,14 @@ h1 {
 a {
 	text-decoration: none;
 	color: #223ad8;
+}
+body .H_ib_close {
+    font-size: .6em;
+    position: absolute;
+    right: .3em !important;
+    top: .3em !important;
+    cursor: pointer;
+    fill: #fff;
+    background: #ffcb00;
+    padding: 5px;
 }

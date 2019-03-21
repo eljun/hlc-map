@@ -37,51 +37,73 @@ function addInfoBubble(map) {
   var listings = [
     {
       "model": "Natalia Residence",
+      "banner": "images/natalia-residence.jpg",
       "location": "Lotlot, Consolacion",
       "price": "2.2m",
+      "status": "Preselling",
       "type": "Townhouse",
       "link": "https://www.facebook.com/pages/category/Real-Estate/Natalia-Residences-Consolacion-302102396960940/",
       "geo": "10.3888162,123.943566"
     },    
     {
       "model": "Grand Terrace Subdivision",
+      "banner": "images/grand-terrace.jpg",
       "location": "Casili Rd, Consolacion",
       "price": "2m",
+      "status": "Preselling",
       "type": "Townhouse",
       "link": "https://www.facebook.com/pages/category/Real-Estate/Natalia-Residences-Consolacion-302102396960940/",
       "geo": "10.3723085,123.942427"
     },
     {
       "model": "Richwood Homes",
+      "banner": "images/richwood-homes.jpg",
       "location": "Poblacion, Compostela",
       "price": "1.4m",
+      "status": "Preselling",
       "type": "Townhouse",
       "link": "http://primaryhomes.com/house-and-lot/richwood-homes/",
       "geo": "10.4469569,124.0049691"
     },    
     {
       "model": "Antonioville",
+      "banner": "images/antonioville.jpg",
       "location": "Cotcot, Mandaue",
       "price": "2.1m",
+      "status": "Preselling",
       "type": "Townhouse",
       "link": "http://primaryhomes.com/house-and-lot/richwood-homes/",
       "geo": "10.3762299,123.9372527"
     },
     {
       "model": "Villa Josefina",
+      "banner": "images/villa-josefina.jpg",
       "location": "Gub-ob, Lapu-Lapu",
       "price": "2.1m",
+      "status": "Preselling",
       "type": "Townhouse",
       "link": "http://www.mcfc.co.uk",
       "geo": "10.29968,123.9530675"
     },
     {
       "model": "Casa Mira Naga",
+      "banner": "images/casa-mira-naga.jpg",
       "location": "Langtad, Naga",
       "price": "1.6m",
+      "status": "Preselling",
       "type": "Townhouse",
       "link": "http://www.mcfc.co.uk",
-      "geo": "10.180784,123.7260875"
+      "geo": "10.1807787,123.7260928"
+    },
+    {
+      "model": "Almond Drive",
+      "banner": "images/almond-drive.jpg",
+      "location": "Tanke, Talisay",
+      "price": "3.3m",
+      "status": "Preselling",
+      "type": "Townhouse",
+      "link": "https://m.me/hlc.junsan?ref=Almond%20Drive",
+      "geo": "10.2519996,123.8609078"
     }
   ]
 
@@ -89,14 +111,15 @@ function addInfoBubble(map) {
     
     var geoLoc = val.geo.split(',')    
 
-    addMarkerToGroup(group, {lat:geoLoc[0], lng:geoLoc[1]},
+  addMarkerToGroup(group, {lat:geoLoc[0], lng:geoLoc[1]}, 
+    '<div class="banner"><img src='+ val.banner +'></div><div class="unit-info">' +
     '<div class="model">'+ val.model +'</div>' +
     '<div class="city">Address: <b>'+ val.location +'</b></div>' +
-    '<div class="type">Type:<b>'+ val.type +'</b></div>' +
     '<div class="price">Price:<b>'+ val.price +'</b></div>' +
-    '<div class="view"><a href='+ val.link +'>View More</a></div>'
+    '<div class="type">Type:<b>'+ val.type +'</b></div>' +
+    '<div class="type">Status:<b>'+ val.status +'</b></div>' +
+    '<div class="view"><a href='+ val.link +'>View More</a></div></div>'
     );
-
   })
 
   map.setViewBounds(group.getBounds());
@@ -141,4 +164,3 @@ addInfoBubble(map);
 
 
 $('head').append('<link rel="stylesheet" href="https://js.api.here.com/v3/3.0/mapsjs-ui.css" type="text/css" />');
-
