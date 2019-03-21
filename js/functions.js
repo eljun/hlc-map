@@ -1,4 +1,148 @@
 
+// /**
+//  * Creates a new marker and adds it to a group
+//  * @param {H.map.Group} group       The group holding the new marker
+//  * @param {H.geo.Point} coordinate  The location of the marker
+//  * @param {String} html             Data associated with the marker
+//  */
+// function addMarkerToGroup(group, coordinate, html) {
+//   var marker = new H.map.Marker(coordinate);
+//   // add custom data to the marker
+//   marker.setData(html);
+//   group.addObject(marker);
+// }
+
+// /**
+//  * Add two markers showing the position of Liverpool and Manchester City football clubs.
+//  * Clicking on a marker opens an infobubble which holds HTML content related to the marker.
+//  * @param  {H.Map} map      A HERE Map instance within the application
+//  */
+// function addInfoBubble(map) {
+//   var group = new H.map.Group();
+//   map.addObject(group);
+ 
+
+//   // add 'tap' event listener, that opens info bubble, to the group
+//   group.addEventListener('tap', function (evt) {
+//     // event target is the marker itself, group is a parent event target
+//     // for all objects that it contains
+//     var bubble =  new H.ui.InfoBubble(evt.target.getPosition(), {
+//       // read custom data
+//       content: evt.target.getData()
+//     });
+//     // show info bubble
+//     ui.addBubble(bubble);
+//   }, false);
+
+//   var listings = [
+//     {
+//       "model": "Natalia Residence",
+//       "location": "Lotlot, Consolacion",
+//       "price": "2.2m",
+//       "type": "Townhouse",
+//       "link": "https://www.facebook.com/pages/category/Real-Estate/Natalia-Residences-Consolacion-302102396960940/",
+//       "geo": "10.3888162,123.943566"
+//     },    
+//     {
+//       "model": "Grand Terrace Subdivision",
+//       "location": "Casili Rd, Consolacion",
+//       "price": "2m",
+//       "type": "Townhouse",
+//       "link": "https://www.facebook.com/pages/category/Real-Estate/Natalia-Residences-Consolacion-302102396960940/",
+//       "geo": "10.3723085,123.942427"
+//     },
+//     {
+//       "model": "Richwood Homes",
+//       "location": "Poblacion, Compostela",
+//       "price": "1.4m",
+//       "type": "Townhouse",
+//       "link": "http://primaryhomes.com/house-and-lot/richwood-homes/",
+//       "geo": "10.4469569,124.0049691"
+//     },    
+//     {
+//       "model": "Antonioville",
+//       "location": "Cotcot, Mandaue",
+//       "price": "2.1m",
+//       "type": "Townhouse",
+//       "link": "http://primaryhomes.com/house-and-lot/richwood-homes/",
+//       "geo": "10.3762299,123.9372527"
+//     },
+//     {
+//       "model": "Villa Josefina",
+//       "location": "Gub-ob, Lapu-Lapu",
+//       "price": "2.1m",
+//       "type": "Townhouse",
+//       "link": "http://www.mcfc.co.uk",
+//       "geo": "10.29968,123.9530675"
+//     },
+//     {
+//       "model": "Casa Mira Naga",
+//       "location": "Langtad, Naga",
+//       "price": "1.6m",
+//       "type": "Townhouse",
+//       "link": "http://www.mcfc.co.uk",
+//       "geo": "10.180784,123.7260875"
+//     }
+//   ]
+
+//   $.each(listings, function(key,val){
+    
+//     var geoLoc = val.geo.split(',')    
+
+//     addMarkerToGroup(group, {lat:geoLoc[0], lng:geoLoc[1]},
+//     '<div class="model">'+ val.model +'</div>' +
+//     '<div class="city">Address: <b>'+ val.location +'</b></div>' +
+//     '<div class="type">Type:<b>'+ val.type +'</b></div>' +
+//     '<div class="price">Price:<b>'+ val.price +'</b></div>' +
+//     '<div class="view"><a href='+ val.link +'>View More</a></div>'
+//     );
+
+//   })
+
+//   map.setViewBounds(group.getBounds());
+
+
+
+// }
+
+// /**
+//  * Boilerplate map initialization code starts below:
+//  */
+
+// // initialize communication with the platform
+// var platform = new H.service.Platform({
+//   app_id: 'devportal-demo-20180625',
+//   app_code: '9v2BkviRwi9Ot26kp2IysQ',
+//   useHTTPS: true
+// });
+// var pixelRatio = window.devicePixelRatio || 1;
+// var defaultLayers = platform.createDefaultLayers({
+//   tileSize: pixelRatio === 1 ? 256 : 512,
+//   ppi: pixelRatio === 1 ? undefined : 320
+// });
+
+// // initialize a map - this map is centered over Europe
+// var map = new H.Map(document.getElementById('map'),
+//   defaultLayers.normal.map,{
+//   center: {lat: 53.430, lng: -2.961},
+//   zoom: 7,
+//   pixelRatio: pixelRatio
+// });
+
+// // MapEvents enables the event system
+// // Behavior implements default interactions for pan/zoom (also on mobile touch environments)
+// var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+
+// // create default UI with layers provided by the platform
+// var ui = H.ui.UI.createDefault(map, defaultLayers);
+
+// // Now use the map as required...
+// addInfoBubble(map);
+
+// $('head').append('<link rel="stylesheet" href="https://js.api.here.com/v3/3.0/mapsjs-ui.css" type="text/css" />');
+
+
+
 /**
  * Creates a new marker and adds it to a group
  * @param {H.map.Group} group       The group holding the new marker
@@ -34,64 +178,21 @@ function addInfoBubble(map) {
     ui.addBubble(bubble);
   }, false);
 
-  var listings = [
-    {
-      "model": "Natalia Residence",
-      "location": "Lotlot, Consolacion",
-      "price": "2.2m",
-      "type": "Townhouse",
-      "link": "https://www.facebook.com/pages/category/Real-Estate/Natalia-Residences-Consolacion-302102396960940/",
-      "geo": "10.3888162,123.943566"
-    },    
-    {
-      "model": "Grand Terrace Subdivision",
-      "location": "Casili Rd, Consolacion",
-      "price": "2m",
-      "type": "Townhouse",
-      "link": "https://www.facebook.com/pages/category/Real-Estate/Natalia-Residences-Consolacion-302102396960940/",
-      "geo": "10.3723085,123.942427"
-    },
-    {
-      "model": "Richwood Homes",
-      "location": "Poblacion, Compostela",
-      "price": "1.4m",
-      "type": "Townhouse",
-      "link": "http://primaryhomes.com/house-and-lot/richwood-homes/",
-      "geo": "10.4469569,124.0049691"
-    },    
-    {
-      "model": "Antonioville",
-      "location": "Cotcot, Mandaue",
-      "price": "2.1m",
-      "type": "Townhouse",
-      "link": "http://primaryhomes.com/house-and-lot/richwood-homes/",
-      "geo": "10.3762299,123.9372527"
-    },
-    {
-      "model": "Villa Josefina",
-      "location": "Gub-ob, Lapu-Lapu",
-      "price": "2.1m",
-      "type": "Townhouse",
-      "link": "http://www.mcfc.co.uk",
-      "geo": "10.29968,123.9530675"
-    }
-  ]
+  addMarkerToGroup(group, {lat:53.439, lng:-2.221},
+    '<div><a href=\'http://www.mcfc.co.uk\' >Manchester City</a>' +
+    '</div><div >City of Manchester Stadium<br>Capacity: 48,000</div>');
 
-  console.log(listings)
+  addMarkerToGroup(group, {lat:53.430, lng:-2.961},
+    '<div ><a href=\'http://www.liverpoolfc.tv\' >Liverpool</a>' +
+    '</div><div >Anfield<br>Capacity: 45,362</div>');  
 
-  $.each(listings, function(key,val){
-    
-    var geoLoc = val.geo.split(',')    
+  addMarkerToGroup(group, {lat:55.8554403, lng:-4.3024978},
+    '<div ><a href=\'http://www.liverpoolfc.tv\' >Glasgow</a>' +
+    '</div><div >Anfield<br>Capacity: 45,362</div>');
 
-    addMarkerToGroup(group, {lat:geoLoc[0], lng:geoLoc[1]},
-    '<div class="model">'+ val.model +'</div>' +
-    '<div class="city">Address: <b>'+ val.location +'</b></div>' +
-    '<div class="type">Type:<b>'+ val.type +'</b></div>' +
-    '<div class="price">Price:<b>'+ val.price +'</b></div>' +
-    '<div class="view"><a href='+ val.link +'>View More</a></div>'
-    );
-
-  })
+  addMarkerToGroup(group, {lat:51.5287718, lng:-0.2416819},
+    '<div ><a href=\'http://www.liverpoolfc.tv\' >Glasgow</a>' +
+    '</div><div >Anfield<br>Capacity: 45,362</div>');
 
 }
 
@@ -103,18 +204,22 @@ function addInfoBubble(map) {
 
 // initialize communication with the platform
 var platform = new H.service.Platform({
-  app_id: '3g2G06udOp04PguQNZGl',
-  app_code: '_ok1L6jVwZ3dzuyByPgvNQ',
-  useCIT: true,
+  app_id: 'devportal-demo-20180625',
+  app_code: '9v2BkviRwi9Ot26kp2IysQ',
   useHTTPS: true
 });
-var defaultLayers = platform.createDefaultLayers();
+var pixelRatio = window.devicePixelRatio || 1;
+var defaultLayers = platform.createDefaultLayers({
+  tileSize: pixelRatio === 1 ? 256 : 512,
+  ppi: pixelRatio === 1 ? undefined : 320
+});
 
 // initialize a map - this map is centered over Europe
 var map = new H.Map(document.getElementById('map'),
   defaultLayers.normal.map,{
-  center: {lat: 10.3367097, lng: 123.7431235},
-  zoom: 12
+  center: {lat: 53.430, lng: -2.961},
+  zoom: 7,
+  pixelRatio: pixelRatio
 });
 
 // MapEvents enables the event system
@@ -126,5 +231,3 @@ var ui = H.ui.UI.createDefault(map, defaultLayers);
 
 // Now use the map as required...
 addInfoBubble(map);
-
-$('head').append('<link rel="stylesheet" href="https://js.api.here.com/v3/3.0/mapsjs-ui.css" type="text/css" />');
