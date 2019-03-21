@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+body,html {
+	background: #223ad8;
+	font-family: "Open sans", sans-serif;
+	font-size: 16px;
+	color: #fff;
+	padding: 0;
+	margin: 0;
+}
+p,div,span,li,td{
+	font-size: 14px;
+}
+.H_ib_body {
+	padding: 10px !important;
+	box-shadow: 0 14px 25px rgba(0,0,0, .25)
+}
+.H_ib_body,
+.H_ib_content {
+	background: #fff !important;
+	color: #000;
+}
+.H_ib_content {
+	color: rgba(0,0,0, .65);
+}
+.H_ib_content b{
+	color: rgba(0,0,0, .87);
+}
+svg.H_icon {
+	fill: #000 !important;
+}
+h1 {
+	text-align: center
+}
+.model {
+	padding-top: 10px;
+	font-size: 18px;
+	color: #223ad8;
+	margin-bottom: 10px;
+}
+.view {
+	margin-top: 15px;
+}
+a {
+	text-decoration: none;
+	color: #223ad8;
+}
