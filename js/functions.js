@@ -134,7 +134,7 @@ function addInfoBubble(map) {
 
 // initialize communication with the platform
 var platform = new H.service.Platform({
-  app_id: 'devportal-demo-20180625',
+  app_id: 'Pcf9LE1Qp6qTeZA52PVK',
   app_code: '9v2BkviRwi9Ot26kp2IysQ',
   useHTTPS: true
 });
