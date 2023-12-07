@@ -144,7 +144,7 @@ var defaultLayers = platform.createDefaultLayers({
 });
 
 // initialize a map - this map is centered over Europe
-var map = new H.Map(document.getElementById('map'),
+var map = new H.Map(document.getElementById('mapContainer'),
   defaultLayers.normal.map,{
   center: {lat: 10.3311397, lng: 123.6497188},
   zoom: 11,
