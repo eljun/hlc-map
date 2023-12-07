@@ -138,19 +138,15 @@ var platform = new H.service.Platform({
   useHTTPS: true
 });
 var pixelRatio = window.devicePixelRatio || 1;
-var defaultLayers = platform.createDefaultLayers({
-  tileSize: pixelRatio === 1 ? 256 : 512,
-  ppi: pixelRatio === 1 ? undefined : 320
-});
+var defaultLayers = platform.createDefaultLayers();
 
 // initialize a map - this map is centered over Europe
-var map = new H.Map(document.getElementById('mapContainer'),
-  defaultLayers.vector.normal.map,
-   {
+var map = new H.Map(
+  document.getElementById('mapContainer'),
+  defaultLayers.vector.normal.map,{
     zoom: 11,
-    pixelRatio: pixelRatio,
-    center: {lat: 10.3311397,lng: 123.6497188}
-    },  
+    center: {lat: 10.3311397,lng: 123.6497188},
+    engineType: H.map.render.RenderEngine.EngineType.P2D
 });
 
 // MapEvents enables the event system
