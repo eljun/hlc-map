@@ -150,8 +150,6 @@ var map = new H.Map(
 });
 
 
-// create default UI with layers provided by the platform
-var ui = H.ui.UI.createDefault(map, defaultLayers);
 
 // Now use the map as required...
 addInfoBubble(map);
