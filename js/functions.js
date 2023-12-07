@@ -122,7 +122,7 @@ function addInfoBubble(map) {
     );
   })
 
-  H.map.ViewModel(group.getBounds());
+  H.map.ViewModel();
 
 
 
