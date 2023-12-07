@@ -134,8 +134,7 @@ function addInfoBubble(map) {
 
 // initialize communication with the platform
 var platform = new H.service.Platform({
-  app_id: 'Pcf9LE1Qp6qTeZA52PVK',
-  app_code: '9v2BkviRwi9Ot26kp2IysQ',
+  apikey: 'JBUKLNYl0mp9L9ieF7knZuk7TiW7Q38rBnivEzQ2pko',
   useHTTPS: true
 });
 var pixelRatio = window.devicePixelRatio || 1;
