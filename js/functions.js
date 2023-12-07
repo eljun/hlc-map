@@ -149,9 +149,6 @@ var map = new H.Map(
     engineType: H.map.render.RenderEngine.EngineType.P2D
 });
 
-// MapEvents enables the event system
-// Behavior implements default interactions for pan/zoom (also on mobile touch environments)
-var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
 
 // create default UI with layers provided by the platform
 var ui = H.ui.UI.createDefault(map, defaultLayers);
